@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('empresas', function (Blueprint $table) {
-            $table->id();
+            $table->id();//Laravel define el tipo de los id como unsignedBigInteger
 
             $table->string('pais');
             $table->string('nombre_empresa');

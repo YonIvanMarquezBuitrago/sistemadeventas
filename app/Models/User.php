@@ -45,4 +45,10 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+    /*Crear relación de modelo usuario con modelo empresa*/
+    public function empresa()
+    {
+        /*Relacion uno a uno*/
+        return $this->belongsTo(Empresa::class);
+    }
 }

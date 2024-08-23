@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Empresa extends Model
 {
     use HasFactory;
+
+    /*Crear relacion de modelo empresa con modelo usuario*/
+    public function users()
+    {
+        /*Relacion uno a muchos*/
+        return $this->hasMany(User::class);
+    }
 }

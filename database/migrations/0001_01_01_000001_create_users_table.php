@@ -12,11 +12,20 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->id();
+            $table->id();//Laravel define el tipo de los id como unsignedBigInteger
             $table->string('name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+
+            //Campo llave foranea, relación con la Tabla Empresas
+            $table->unsignedBigInteger('empresa_id');//la llave foranea debe tener el mismo tipo que el campo origen
+            $table->foreign('empresa_id')
+                ->references('id')
+                ->on('empresas')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
+
             $table->rememberToken();
             $table->timestamps();
         });
