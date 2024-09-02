@@ -117,11 +117,16 @@ class EmpresaController extends Controller
         /*Se guardan los datos recopilados*/
         $usuario->save();
 
+        /*Asignación del rol*/
+        $usuario->assignRole('ADMINISTRADOR');
+
         /*Hacer que el nuevo usuario entre al sistema autenticado apenas cree la nueva empresa*/
         Auth::login($usuario);
 
         /*Ruta a donde debe retornar en cuanto guarde*/
-        return redirect()->route('admin.index')->with('mensaje', 'Se registró la Empresa de manera Exitosa!!');
+        return redirect()->route('admin.index')
+            ->with('mensaje', 'Se registró la Empresa de manera Exitosa!!')
+            ->with('icono','success');
 
     }
 
