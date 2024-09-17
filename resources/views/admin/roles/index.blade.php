@@ -30,7 +30,7 @@
                 </div>
                 <div class="card-body">
                     <table id="example1" class="table table-bordered table-striped table-hover table-sm">
-                        <thead>
+                        <thead  class="thead-light">
                         <tr>
                             <th scope="col" style="text-align: center">#</th>
                             <th scope="col">Nombre del Rol</th>
@@ -39,7 +39,7 @@
                         </thead>
                         <tbody>
                         <?= $contador_roles = 1; ?>
-                        @foreach($roles as $role)
+                        @foreach($roles as $role){{--Se definió en la funcion index de C:\wamp64\www\sistemadeventas\app\Http\Controllers\RoleController.php--}}
                             <tr>
                                 <th scope="row" style="text-align: center">{{$contador_roles++}}</th>
                                 <td>{{$role->name}}</td>

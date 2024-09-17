@@ -132,7 +132,7 @@
                                 <div class="row">
                                     <div class="col-md-8">
                                         <div class="form-group">
-                                            <label for="nombre_empresa">Nombre de la Empresa</label>
+                                            <label for="nombre_empresa">Nombre de la Empresa</label><b style="color: red"> *</b>
                                             <input type="text" value="{{$empresa->nombre_empresa}}" name="nombre_empresa" class="form-control" required>
                                             {{--Muestra el error en el caso de que se vulnere la validación quitando el required del FrontEnd--}}
                                             @error('nombre_empresa')
@@ -160,7 +160,7 @@
                                 <div class="row">
                                     <div class="col-md-3">
                                         <div class="form-group">
-                                            <label for="nit">NIT</label>
+                                            <label for="nit">NIT</label><b style="color: red"> *</b>
                                             <input type="text" value="{{$empresa->nit}}" name="nit" class="form-control" required>
                                             {{--Muestra el error en el caso de que se vulnere la validación quitando el required del FrontEnd--}}
                                             @error('nit')
@@ -170,7 +170,7 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="correo">Correo de la Empresa</label>
+                                            <label for="correo">Correo de la Empresa</label><b style="color: red"> *</b>
                                             <input type="email" value="{{$empresa->correo}}" name="correo" class="form-control" required>
                                             {{--Muestra el error en el caso de que se vulnere la validación quitando el required del FrontEnd--}}
                                             @error('correo')
@@ -205,7 +205,7 @@
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label for="telefono">Teléfono</label>
+                                            <label for="telefono">Teléfono</label><b style="color: red"> *</b>
                                             <input type="text" value="{{$empresa->telefono}}" name="telefono" class="form-control" required>
                                             {{--Muestra el error en el caso de que se vulnere la validación quitando el required del FrontEnd--}}
                                             @error('telefono')
@@ -216,7 +216,7 @@
 
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label for="nombre_impuesto">Nombre Impuesto</label>
+                                            <label for="nombre_impuesto">Nombre Impuesto</label><b style="color: red"> *</b>
                                             <input type="text" value="{{$empresa->nombre_impuesto}}" name="nombre_impuesto" class="form-control" required>
                                             {{--Muestra el error en el caso de que se vulnere la validación quitando el required del FrontEnd--}}
                                             @error('nombre_impuesto')
@@ -226,7 +226,7 @@
                                     </div>
                                     <div class="col-md-2">
                                         <div class="form-group">
-                                            <label for="cantidad_impuesto">% Impuesto</label>
+                                            <label for="cantidad_impuesto">% Impuesto</label><b style="color: red"> *</b>
                                             <input type="number" value="{{$empresa->cantidad_impuesto}}" name="cantidad_impuesto" class="form-control" required>
                                             {{--Muestra el error en el caso de que se vulnere la validación quitando el required del FrontEnd--}}
                                             @error('cantidad_impuesto')
@@ -238,7 +238,7 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label for="direccion">Direccion de la Empresa</label>
+                                            <label for="direccion">Direccion de la Empresa</label><b style="color: red"> *</b>
                                             <input id="pac-input" value="{{$empresa->direccion}}" class="form-control" name="direccion" type="text" placeholder="Buscar..." required>
                                             {{--Muestra el error en el caso de que se vulnere la validación quitando el required del FrontEnd--}}
                                             @error('direccion')

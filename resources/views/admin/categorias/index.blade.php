@@ -4,8 +4,8 @@
  * Filename: index.blade.php
  * Descr: Archivo PHP del Proyecto sistemadeventas Producto PhpStorm
  * User: IngEnLinea https://ingenlinea.com/ INGENLINEAPC
- * Date: 31/08/2024
- * Time: 2:06 p. m.
+ * Date: 3/09/2024
+ * Time: 9:10 a. m.
  */
 ?>
 
@@ -14,7 +14,7 @@
 {{--@section('title', 'Dashboard')--}}
 
 @section('content_header')
-    <h1><b>Listado de Usuarios</b></h1>
+    <h1><b>Listado de Categorías</b></h1>
 @stop
 
 @section('content')
@@ -22,9 +22,9 @@
         <div class="col-md-12">
             <div class="card card-outline card-primary">
                 <div class="card-header">
-                    <h3 class="card-title">Usuarios Registrados</h3>
+                    <h3 class="card-title">Categorías Registradas</h3>
                     <div class="card-tools">
-                        <a href="{{url('/admin/usuarios/create')}}" class="btn btn-primary"><i class="fa fa-plus"></i> Crear Nuevo Usuario</a>
+                        <a href="{{url('/admin/categorias/create')}}" class="btn btn-primary"><i class="fa fa-plus"></i> Crear Nueva Categoría</a>
                     </div>
                 </div>
                 <div class="card-body">
@@ -32,35 +32,33 @@
                         <thead  class="thead-light">
                         <tr>
                             <th scope="col" style="text-align: center">#</th>
-                            <th scope="col">Rol del Usuario</th>
-                            <th scope="col">Nombre del Usuario</th>
-                            <th scope="col">Correo</th>
+                            <th scope="col">Nombre Categoria</th>
+                            <th scope="col">Descripción</th>
                             <th scope="col" style="text-align: center">Acciones</th>
                         </tr>
                         </thead>
                         <tbody>
-                        <?= $contador_usuarios = 1; ?>
-                        @foreach($usuarios as $usuario){{--Se definió en la funcion index de C:\wamp64\www\sistemadeventas\app\Http\Controllers\UsuarioController.php--}}
+                        <?= $contador_categorias = 1; ?>
+                        @foreach($categorias as $categoria){{--Se definió en la funcion index de C:\wamp64\www\sistemadeventas\app\Http\Controllers\CategoriaController.php--}}
                             <tr>
-                                <th scope="row" style="text-align: center">{{$contador_usuarios++}}</th>
-                                <td>{{$usuario->roles->pluck('name')->implode(', ')}}</td>
-                                <td>{{$usuario->name}}</td>
-                                <td>{{$usuario->email}}</td>
+                                <th scope="row" style="text-align: center">{{$contador_categorias++}}</th>
+                                <td>{{$categoria->nombre}}</td>
+                                <td>{{$categoria->descripcion}}</td>
                                 <td style="text-align: center">
                                     <div class="btn-group" role="group" aria-label="Basic example">
-                                        <a href="{{url('/admin/usuarios',$usuario->id)}}" type="button" class="btn btn-info btn-sm"><i class="fa fa-eye"></i></a>
-                                        <a href="{{url('/admin/usuarios/'.$usuario->id.'/edit')}}" type="button" class="btn btn-success btn-sm"><i class="fa fa-pencil"></i></a>
-                                        <form action="{{url('/admin/usuarios/'.$usuario->id)}}" method="post"
-                                              onclick="preguntar{{$usuario->id}}(event)" id="miformulario{{$usuario->id}}">
+                                        <a href="{{url('/admin/categorias',$categoria->id)}}" type="button" class="btn btn-info btn-sm"><i class="fa fa-eye"></i></a>
+                                        <a href="{{url('/admin/categorias/'.$categoria->id.'/edit')}}" type="button" class="btn btn-success btn-sm"><i class="fa fa-pencil"></i></a>
+                                        <form action="{{url('/admin/categorias/'.$categoria->id)}}" method="post"
+                                              onclick="preguntar{{$categoria->id}}(event)" id="miformulario{{$categoria->id}}">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-trash" style="border-radius: 0px 4px 4px 0px"></i></button>
                                         </form>
                                         <script>
-                                            function preguntar{{$usuario->id}}(event) {
+                                            function preguntar{{$categoria->id}}(event) {
                                                 event.preventDefault();
                                                 Swal.fire({
-                                                    title: "Desea Eliminar este Registro?",
+                                                    title: "Desea Eliminar este Registro? NOTA: Si se elimina esta Categoría, también serán borrados los Productos relacionados",
                                                     text: '',
                                                     icon: 'question',
                                                     showDenyButton: true,
@@ -71,7 +69,7 @@
                                                 }).then((result) => {
                                                     if (result.isConfirmed) {
                                                         //Swal.fire("Saved!", "", "success");
-                                                        var form = $('#miformulario{{$usuario->id}}');
+                                                        var form = $('#miformulario{{$categoria->id}}');
                                                         form.submit();
                                                     }
                                                 });
@@ -107,12 +105,12 @@
                 "pageLength": 10,
                 "language": {
                     "emptyTable": "No hay información",
-                    "info": "Mostrando _START_ a _END_ de _TOTAL_ Usuarios",
-                    "infoEmpty": "Mostrando 0 a 0 de 0 Usuarios",
-                    "infoFiltered": "(Filtrado de MAX total Usuarios)",
+                    "info": "Mostrando _START_ a _END_ de _TOTAL_ Categorías",
+                    "infoEmpty": "Mostrando 0 a 0 de 0 Categorías",
+                    "infoFiltered": "(Filtrado de MAX total Categorías)",
                     "infoPostFix": "",
                     "thousands": ",",
-                    "lengthMenu": "Mostrar _MENU_ Usuarios",
+                    "lengthMenu": "Mostrar _MENU_ Categorías",
                     "loadingRecords": "Cargando...",
                     "processing": "Procesando...",
                     "search": "Buscador:",

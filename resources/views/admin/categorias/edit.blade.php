@@ -4,10 +4,9 @@
  * Filename: edit.blade.php
  * Descr: Archivo PHP del Proyecto sistemadeventas Producto PhpStorm
  * User: IngEnLinea https://ingenlinea.com/ INGENLINEAPC
- * Date: 23/08/2024
- * Time: 6:38 p. m.
+ * Date: 3/09/2024
+ * Time: 9:09 a. m.
  */
-
 ?>
 
 @extends('adminlte::page')
@@ -15,26 +14,35 @@
 {{--@section('title', 'Dashboard')--}}
 
 @section('content_header')
-    <h1><b>Roles|Modificar Rol</b></h1>
+    <h1><b>Categorías|Actualizar Categoría: {{$categoria->nombre}}</b></h1>
 @stop
 
 @section('content')
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-9">
             <div class="card card-outline card-success">
                 <div class="card-header">
-                    <h3 class="card-title">Actualice los datos del Rol</h3>
+                    <h3 class="card-title">Actualice los datos de la Categoría</h3>
                 </div>
                 <div class="card-body">
-                    <form action="{{url('/admin/roles',$role->id)}}" method="post">
+                    <form action="{{url('/admin/categorias',$categoria->id)}}" method="post">
                         @csrf
                         @method('PUT')
                         <div class="row">
-                            <div class="col-md-12">
+                            <div class="col-md-4">
                                 <div class="form-group">
-                                    <label for="name">Nombre del Rol</label><b style="color: red"> *</b>
-                                    <input type="text" class="form-control" value="{{$role->name}}" name="name" required>
-                                    @error('name')
+                                    <label for="nombre">Nombre Categoría</label><b style="color: red"> *</b>
+                                    <input type="text" class="form-control" value="{{$categoria->nombre}}" name="nombre" required>
+                                    @error('nombre')
+                                    <small style="color: red;">{{$message}}</small>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    <label for="descripcion">Descripción</label><b style="color: red"> *</b>
+                                    <input type="text" class="form-control" value="{{$categoria->descripcion}}" name="descripcion" required>
+                                    @error('descripcion')
                                     <small style="color: red;">{{$message}}</small>
                                     @enderror
                                 </div>
@@ -44,8 +52,8 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <a href="{{url('admin/roles')}}" class="btn btn-secondary btn-sm">Cancelar</a>
-                                    <button type="submit" class="btn btn-success btn-sm"><i class="fas fa-save"></i> Actualizar</button>
+                                    <a href="{{url('admin/categorias')}}" class="btn btn-secondary btn-sm">Cancelar</a>
+                                    <button type="submit" class="btn btn-success btn-sm"><i class="fas fa-save"></i> Actualizar Categoría</button>
                                 </div>
                             </div>
                         </div>

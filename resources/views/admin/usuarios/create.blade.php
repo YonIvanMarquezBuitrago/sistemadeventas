@@ -40,7 +40,7 @@
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <label for="name">Nombre del Usuario</label>
+                                    <label for="name">Nombre del Usuario</label><b style="color: red"> *</b>
                                     <input type="text" class="form-control" value="{{old('name')}}" name="name" required>
                                     @error('name')
                                     <small style="color: red;">{{$message}}</small>
@@ -49,7 +49,7 @@
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <label for="email">Correo</label>
+                                    <label for="email">Correo</label><b style="color: red"> *</b>
                                     <input type="email" class="form-control" value="{{old('email')}}" name="email" required>
                                     @error('email')
                                     <small style="color: red;">{{$message}}</small>
@@ -60,7 +60,7 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="password">Contraseña</label>
+                                    <label for="password">Contraseña</label><b style="color: red"> *</b>
                                     <input type="password" class="form-control" value="{{old('password')}}" name="password" required>
                                     @error('password')
                                     <small style="color: red;">{{$message}}</small>
@@ -69,7 +69,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="password_confirmation">Repita la Contraseña</label>
+                                    <label for="password_confirmation">Repita la Contraseña</label><b style="color: red"> *</b>
                                     <input type="password" class="form-control" value="{{old('password_confirmation')}}" name="password_confirmation" required>
                                     @error('password_confirmation')
                                     <small style="color: red;">{{$message}}</small>

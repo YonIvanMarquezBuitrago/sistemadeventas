@@ -41,7 +41,7 @@
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <label for="name">Nombre del Usuario</label>
+                                    <label for="name">Nombre del Usuario</label><b style="color: red"> *</b>
                                     <input type="text" class="form-control" value="{{$usuario->name}}" name="name" required>
                                     @error('name')
                                     <small style="color: red;">{{$message}}</small>
@@ -50,7 +50,7 @@
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <label for="email">Correo</label>
+                                    <label for="email">Correo</label><b style="color: red"> *</b>
                                     <input type="email" class="form-control" value="{{$usuario->email}}" name="email" required>
                                     @error('email')
                                     <small style="color: red;">{{$message}}</small>

@@ -21,32 +21,56 @@
     <div class="row">
         {{--Widget Roles--}}
         <div class="col-md-3 col-sm-6 col-12">
-            <div class="info-box">
+            <div class="info-box zoomP">
                 <a href="{{url('/admin/roles')}}" class="info-box-icon bg-info">
                     <span><i class="fas fa-user-check"></i></span></a>
                 <div class="info-box-content">
                     <span class="info-box-text">Roles Registrados</span>
-                    <span class="info-box-number">{{$total_roles}} Roles</span>
+                    <span class="info-box-number">{{$total_roles}} Roles</span>{{--se define en C:\wamp64\www\sistemadeventas\app\Http\Controllers\AdminController.php--}}
                 </div>
             </div>
-        </div>
+        </div>{{--/Widget Roles--}}
         {{--Widget Usuarios--}}
         <div class="col-md-3 col-sm-6 col-12">
-            <div class="info-box">
+            <div class="info-box zoomP">
                 <a href="{{url('/admin/roles')}}" class="info-box-icon bg-primary">
                     <span><i class="fas fa-users"></i></span></a>
                 <div class="info-box-content">
                     <span class="info-box-text">Usuarios Registrados</span>
-                    <span class="info-box-number">{{$total_usuarios}} Usuarios</span>
+                    <span class="info-box-number">{{$total_usuarios}} Usuarios</span>{{--se define en C:\wamp64\www\sistemadeventas\app\Http\Controllers\AdminController.php--}}
                 </div>
             </div>
-        </div>
+        </div>{{--/Widget Usuarios --}}
+        {{--Widget Categorías--}}
+        <div class="col-md-3 col-sm-6 col-12">
+            <div class="info-box zoomP">
+                <a href="{{url('/admin/categorías')}}" class="info-box-icon bg-success">
+                    <span><i class="fas fa-tags"></i></span></a>
+                <div class="info-box-content">
+                    <span class="info-box-text">Categorías Registradas</span>
+                    <span class="info-box-number">{{$total_categorias}} Categorías</span>{{--se define en C:\wamp64\www\sistemadeventas\app\Http\Controllers\AdminController.php--}}
+                </div>
+            </div>
+        </div>{{--/Widget Categorías--}}
+        {{--Widget Productos--}}
+        <div class="col-md-3 col-sm-6 col-12">
+            <div class="info-box zoomP">
+                <a href="{{url('/admin/productos')}}" class="info-box-icon bg-warning">
+                    <span><i class="fas fa-list"></i></span></a>
+                <div class="info-box-content">
+                    <span class="info-box-text">Productos Registrados</span>
+                    <span class="info-box-number">{{$total_productos}} Productos</span>{{--se define en C:\wamp64\www\sistemadeventas\app\Http\Controllers\AdminController.php--}}
+                </div>
+            </div>
+        </div>{{--/Widget Productos--}}
     </div>
 @stop
 
 @section('css')
     {{-- Add here extra stylesheets --}}
     {{-- <link rel="stylesheet" href="/css/admin_custom.css"> --}}
+
+
 @stop
 
 @section('js')

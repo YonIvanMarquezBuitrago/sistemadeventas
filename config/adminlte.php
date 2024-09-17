@@ -361,6 +361,32 @@ return [
                 ],
             ],
         ],
+        /*Menú Categorias*/
+        [
+            'text' => 'Categorias',
+            'icon' => 'fas fa-fw fa-tags',
+            'classes'=>'bg-blue text-white',
+            'submenu' => [
+                [
+                    'text' => 'Lista Categorias',
+                    'url' => 'admin/categorias',
+                    'classes'=>'bg-white text-black',
+                ],
+            ],
+        ],
+        /*Menú Productos*/
+        [
+            'text' => 'Productos',
+            'icon' => 'fas fa-fw fa-boxes',
+            'classes'=>'bg-blue text-white',
+            'submenu' => [
+                [
+                    'text' => 'Lista Productos',
+                    'url' => 'admin/productos',
+                    'classes'=>'bg-white text-black',
+                ],
+            ],
+        ],
         /*Menú Ejemplo*/
         /*[
             'text' => 'multilevel',

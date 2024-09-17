@@ -14,7 +14,7 @@
 {{--@section('title', 'Dashboard')--}}
 
 @section('content_header')
-    <h1><b>Roles|Detalle del Rol</b></h1>
+    <h1><b>Roles|Detalle del Rol: {{$role->name}}</b></h1>
 @stop
 
 @section('content')
@@ -25,22 +25,36 @@
                     <h3 class="card-title">Datos Registrados del Rol</h3>
                 </div>
                 <div class="card-body">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <label for="name">Nombre del Rol</label>
-                                    <p>{{$role->name}}</p>
-                                </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="name">Nombre del Rol</label>
+                                <p>{{$role->name}}</p>
                             </div>
                         </div>
-                        <hr>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <a href="{{url('admin/roles')}}" class="btn btn-secondary btn-sm">Volver</a>
-                                </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="created_at">Fecha y Hora Creación</label>
+                                <p>{{$role->created_at}}</p>
                             </div>
                         </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="updated_at">Fecha y Hora Actualización</label>
+                                <p>{{$role->updated_at}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <a href="{{url('admin/roles')}}" class="btn btn-secondary btn-sm">Volver</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
