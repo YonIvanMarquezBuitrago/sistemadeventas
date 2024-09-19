@@ -377,12 +377,25 @@ return [
         /*Menú Productos*/
         [
             'text' => 'Productos',
-            'icon' => 'fas fa-fw fa-boxes',
+            'icon' => 'fas fa-solid fa-boxes-stacked',
             'classes'=>'bg-blue text-white',
             'submenu' => [
                 [
                     'text' => 'Lista Productos',
                     'url' => 'admin/productos',
+                    'classes'=>'bg-white text-black',
+                ],
+            ],
+        ],
+        /*Menú Proveedores*/
+        [
+            'text' => 'Proveedores',
+            'icon' => 'fas fa-solid fa-truck',
+            'classes'=>'bg-blue text-white',
+            'submenu' => [
+                [
+                    'text' => 'Lista Proveedores',
+                    'url' => 'admin/proveedores',
                     'classes'=>'bg-white text-black',
                 ],
             ],

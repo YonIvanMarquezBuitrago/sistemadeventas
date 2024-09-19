@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Producto;
 use App\Models\User;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -22,7 +23,10 @@ class DatabaseSeeder extends Seeder
             'email' => 'test@example.com',
         ]);*/
 
-        /*Creación del rol de administrador por defecto automáticamente*/
-        $administrador = Role::create(['name'=>'ADMINISTRADOR']);
+        /*Creación del rol de administrador por defecto automáticamente, si ya se ejecutó una vez, se comenta para otras semillas*/
+        //$administrador = Role::create(['name'=>'ADMINISTRADOR']);
+
+        /*Ejecución del ProductoFactory para 100 productos, debido a que el campo nombre está como unique, puede que se trunque el seeder*/
+        Producto::factory()->count(100)->create();
     }
 }

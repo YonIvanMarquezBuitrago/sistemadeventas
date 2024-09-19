@@ -34,8 +34,9 @@
                                         <div class="form-group">
                                             <label for="categoria_id">Categoría</label>
                                             <select name="categoria_id" id="categoria_id" class="form-control">
-                                                @foreach($categorias as $categoria){{--Se definió en la funcion index de C:\wamp64\www\sistemadeventas\app\Http\Controllers\CategoriaController.php--}}
-                                                <option value="{{$categoria->id}}">{{$categoria->nombre}}</option>
+                                                @foreach($categorias as $categoria)
+                                                    {{--Se definió en la funcion index de C:\wamp64\www\sistemadeventas\app\Http\Controllers\CategoriaController.php--}}
+                                                    <option value="{{$categoria->id}}">{{$categoria->nombre}}</option>
                                                 @endforeach
                                             </select>
                                         </div>
@@ -63,7 +64,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label for="descripcion">Descripción</label>
-                                            <textarea name="descripcion" id="descripcion" cols="30" rows="2" class="form-control" ></textarea>
+                                            <textarea name="descripcion" id="descripcion" cols="30" rows="2" class="form-control"></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -115,15 +116,15 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                   <div class="col-md-4">
-                                       <div class="form-group">
-                                           <label for="fecha_ingreso">Fecha Ingreso</label>
-                                           <input type="date" class="form-control" value="{{old('fecha_ingreso')}}" name="fecha_ingreso" required>
-                                           @error('fecha_ingreso')
-                                           <small style="color: red;">{{$message}}</small>
-                                           @enderror
-                                       </div>
-                                   </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="fecha_ingreso">Fecha Ingreso</label>
+                                            <input type="date" class="form-control" value="{{old('fecha_ingreso')}}" name="fecha_ingreso" required>
+                                            @error('fecha_ingreso')
+                                            <small style="color: red;">{{$message}}</small>
+                                            @enderror
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-md-3">
@@ -165,7 +166,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <hr>
                         <div class="row">
                             <div class="col-md-12">
@@ -181,12 +181,10 @@
         </div>
     </div>
 @stop
-
 @section('css')
     {{-- Add here extra stylesheets --}}
     {{-- <link rel="stylesheet" href="/css/admin_custom.css"> --}}
 @stop
-
 @section('js')
     {{--el administrador de mensajes se copió en C:\wamp64\www\sistemadeventas\vendor\jeroennoten\laravel-adminlte\resources\views\page.blade.php--}}
 @stop

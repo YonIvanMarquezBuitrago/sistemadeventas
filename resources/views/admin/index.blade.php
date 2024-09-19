@@ -63,6 +63,17 @@
                 </div>
             </div>
         </div>{{--/Widget Productos--}}
+        {{--Widget Proveedores--}}
+        <div class="col-md-3 col-sm-6 col-12">
+            <div class="info-box zoomP">
+                <a href="{{url('/admin/proveedores')}}" class="info-box-icon bg-dark">
+                    <span><i class="fas fa-solid fa-truck"></i></span></a>
+                <div class="info-box-content">
+                    <span class="info-box-text">Proveedores Registrados</span>
+                    <span class="info-box-number">{{$total_proveedores}} Proveedores</span>{{--se define en C:\wamp64\www\sistemadeventas\app\Http\Controllers\AdminController.php--}}
+                </div>
+            </div>
+        </div>{{--/Widget Productos--}}
     </div>
 @stop
 

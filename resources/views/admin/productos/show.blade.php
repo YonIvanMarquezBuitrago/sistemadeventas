@@ -22,7 +22,7 @@
         <div class="col-md-12">
             <div class="card card-outline card-info">
                 <div class="card-header">
-                    <h3 class="card-title">Registre los datos del Nuevo Producto</h3>
+                    <h3 class="card-title">Producto: {{$producto->nombre}}</h3>
                 </div>
                 <div class="card-body">
 
